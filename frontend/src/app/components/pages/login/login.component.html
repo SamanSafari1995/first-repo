@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="details">
+    <app-title title="Login"></app-title>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <text-input label="Email"
+          [control]="fc.email"
+          [showErrorsWhen]="isSubmitted"
+          type="email">
+      </text-input>
+
+
+      <text-input label="Password"
+          [control]="fc.password"
+          [showErrorsWhen]="isSubmitted"
+          type="password">
+      </text-input>
+
+      <default-button
+      text="Login"></default-button>
+
+      <div class="register">
+        Already a user ? &nbsp;
+        <a routerLink="/register" [queryParams]="{returnUrl:returnUrl}">
+          Register Here
+        </a>
+      </div>
+
+    </form>
+  </div>
+</div>
